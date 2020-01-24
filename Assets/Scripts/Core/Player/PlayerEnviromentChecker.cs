@@ -8,12 +8,12 @@ using UnityEngine;
 ///<summary>
 /// Class used to aid PlayerMovement in collisions 
 ///</summary>
-[RequireComponent(typeof(PlayerMovementFixed))]
+[RequireComponent(typeof(IPlayerMovement))]
 public class PlayerEnviromentChecker : MonoBehaviour
 {
 
     private Transform playerPos;
-    private CharacterController charCont;
+    private CapsuleCollider charCont;
     private RaycastHit hit;
     private bool isGrounded;
     private bool onSlope; //Might not be used 
@@ -44,7 +44,7 @@ public class PlayerEnviromentChecker : MonoBehaviour
 
     private void Start()
     {
-        charCont = GetComponentInParent<CharacterController>();
+        charCont = GetComponent<CapsuleCollider>();
         playerPos = GetComponentInParent<Transform>();
         playerHeight = charCont.bounds.extents.y;
     }

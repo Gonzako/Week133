@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class PlayerMovementFixed : MonoBehaviour
+public class PlayerMovementFixed : MonoBehaviour, IPlayerMovement
 {
     private struct State
     {

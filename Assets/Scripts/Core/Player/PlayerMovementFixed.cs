@@ -9,8 +9,7 @@ public class PlayerMovementFixed : MonoBehaviour
         public Vector3 position;
     }
 
-    [SerializeField]
-    private LayerMask groundCollision;
+
 
     // ScriptableObjs
     [SerializeField]

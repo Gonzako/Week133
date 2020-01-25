@@ -18,7 +18,7 @@ public class jumpsOnTouchingGround : MonoBehaviour
     // Update is called once per frame
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.layer == LayerMask.GetMask(groundLayerName))
+        if (other.gameObject.layer == LayerMask.NameToLayer(groundLayerName))
         {
             rb.AddForce(0, ForceToAdd / Time.fixedDeltaTime, 0, ForceMode.Impulse);
             timerBetweenJumps = Time.time + timeBetweenJumps;

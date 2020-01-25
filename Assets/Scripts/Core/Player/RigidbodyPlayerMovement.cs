@@ -8,7 +8,7 @@ using UnityEngine;
 public class RigidbodyPlayerMovement : MonoBehaviour, IPlayerMovement
 {
     public MovementValues MoveSettings;
-
+    public bool canAirControl = false;
     private PlayerEnviromentChecker checker;
     private IPlayerInput reader;
     private CapsuleCollider capCollider;
@@ -16,7 +16,8 @@ public class RigidbodyPlayerMovement : MonoBehaviour, IPlayerMovement
     private bool wishJump = false;
 
     private Vector3 inputVector;
-    private Vector3 forceToAdd;
+    [SerializeField] private Vector3 forceToAdd;
+
     private Vector3 desiredVelocity;
     private float desiredSpeed;
 
@@ -35,10 +36,12 @@ public class RigidbodyPlayerMovement : MonoBehaviour, IPlayerMovement
         QueueJump();
         if (checker.IsGrounded)
         {
+            Debug.Log("Moving on ground");
             GroundMove();
         }
-        else
+        else if(canAirControl)
         {
+            Debug.Log("Air move");
             AirMove();
         }
         AddForce();
@@ -46,12 +49,36 @@ public class RigidbodyPlayerMovement : MonoBehaviour, IPlayerMovement
 
     private void AddForce()
     {
+        Debug.Log(forceToAdd);
         rb.AddForce(forceToAdd, ForceMode.VelocityChange);
+        forceToAdd = Vector3.zero;
     }
 
     private void AirMove()
-    {
-        throw new NotImplementedException();
+    { 
+        float accel;
+        Vector3 wishDir = DesireDirection();
+        float wishSpeed = MoveSettings.baseSpeed;
+
+        wishDir.Normalize();
+
+        if(Vector3.Dot(rb.velocity, wishDir) < 0)
+        {
+            accel = MoveSettings.airDecceleration;
+        }
+        else
+        {
+            accel = MoveSettings.airAcceleration;
+        }
+        
+        if(!(reader.Forward || reader.Backwards) && (reader.Left || reader.Right))
+        {
+            if (wishSpeed > MoveSettings.sideStrafeSpeed) wishSpeed = MoveSettings.sideStrafeSpeed;
+            accel = MoveSettings.sideStrafeAcceleration;
+        }
+        Accelerate(wishDir, wishSpeed/2, accel/2);
+        
+        
     }
 
     private void GroundMove()
@@ -124,17 +151,17 @@ public class RigidbodyPlayerMovement : MonoBehaviour, IPlayerMovement
         } 
         newspeed = speed - drop;
 
+        if (speed > 0)
+        {
+            forceToAdd.x += -rb.velocity.x* 1f/MoveSettings.friction;
+            forceToAdd.z += -rb.velocity.z* 1f/MoveSettings.friction;            
+        }
         if (newspeed < 0)
         {
             forceToAdd.x = -rb.velocity.x;
-            forceToAdd.z = -rb.velocity.y;
+            forceToAdd.z = -rb.velocity.z;
         }
-        if (speed > 0)
-        {
-            forceToAdd.x = -rb.velocity.x* 1f/MoveSettings.friction;
-            forceToAdd.z = -rb.velocity.z* 1f/MoveSettings.friction;
-            
-        }
+      
 
     }
 

@@ -19,7 +19,7 @@ public class IntermitentJump : MonoBehaviour
     {
         if(timerBetweenJumps < Time.time)
         {
-            rb.AddForce(0, ForceToAdd, 0);
+            rb.AddForce(0, ForceToAdd/Time.fixedDeltaTime, 0, ForceMode.Impulse);
             timerBetweenJumps = Time.time + timeBetweenJumps;
         }
     }

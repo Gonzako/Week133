@@ -12,6 +12,7 @@ public class killPlayerOnTouch : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer(playerLayer))
         {
+            
             onPlayerKill?.Invoke();
         }
     }

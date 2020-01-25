@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Jump: 32
   Fire: 323
-  Forward: 119
+  Forward: 122
   Backwards: 115
-  StrafeLeft: 97
+  StrafeLeft: 113
   StrafeRight: 100
   Spray: 116
   Reload: 114

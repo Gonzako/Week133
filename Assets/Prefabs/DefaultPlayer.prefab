@@ -82,7 +82,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 921620bab1b63254c8e3835c1db43040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  KeyBindings: {fileID: 11400000, guid: fb4e4ef495ece6a488545d738c7b9c43, type: 2}
+  KeyBindings: {fileID: 11400000, guid: f1f9ab75ec931f840a74cff2daf168a6, type: 2}
 --- !u!23 &1682275745598844292
 MeshRenderer:
   m_ObjectHideFlags: 0

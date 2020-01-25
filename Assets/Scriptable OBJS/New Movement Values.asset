@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 46a6a85f12715c840a8b01b7bef32568, type: 3}
-  m_Name: BaseMovmentValues
+  m_Name: New Movement Values
   m_EditorClassIdentifier: 
   gravity: 20
-  downGravityMultiplier: 1.94
+  downGravityMultiplier: 1.2
   friction: 6
-  baseSpeed: 8
+  baseSpeed: 7
   runAcceleration: 14
   runDeacceleration: 10
   airAcceleration: 2
   airDecceleration: 2
-  airControl: 22.77
+  airControl: 0.3
   sideStrafeAcceleration: 50
   sideStrafeSpeed: 1
   jumpSpeed: 8
-  holdJumpToBhop: 1
+  holdJumpToBhop: 0

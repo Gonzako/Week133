@@ -172,7 +172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 768
+    m_Bits: 4294967295
   grOffset: 0.1
 --- !u!114 &228446423
 MonoBehaviour:
@@ -656,7 +656,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1042355203}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 200
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -676,7 +676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53e8c76bbf120a541afa96ab96a8d4cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ForceToAdd: 500
+  ForceToAdd: 10000
   timeBetweenJumps: 10
 --- !u!65 &1042355207
 BoxCollider:

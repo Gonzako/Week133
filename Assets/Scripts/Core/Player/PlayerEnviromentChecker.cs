@@ -11,7 +11,8 @@ using UnityEngine;
 [RequireComponent(typeof(IPlayerMovement))]
 public class PlayerEnviromentChecker : MonoBehaviour
 {
-
+    [Range(0, 2f)]
+    public float radiusMultiplier;
     private Transform playerPos;
     private CapsuleCollider charCont;
     private RaycastHit hit;
@@ -32,7 +33,7 @@ public class PlayerEnviromentChecker : MonoBehaviour
     private bool GroundCheck()
     {
         Ray sphereRay = new Ray(transform.position, -transform.up);
-        if (Physics.SphereCast(sphereRay, charCont.radius, out hit, playerHeight + grOffset - charCont.radius, layerMask))
+        if (Physics.SphereCast(sphereRay, charCont.radius * radiusMultiplier, out hit, playerHeight + grOffset - charCont.radius, layerMask))
         {
             onSlope = true;
             return true;

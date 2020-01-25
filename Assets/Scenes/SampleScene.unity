@@ -170,6 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55dac71210f29684884220040b42cc5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  radiusMultiplier: 0.95
   layerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -246,6 +247,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSettings: {fileID: 11400000, guid: 31438b6dff316e1488673954b3eeabaf, type: 2}
+  canAirControl: 0
+  forceToAdd: {x: 0, y: 0, z: 0}
 --- !u!136 &228446427
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -313,10 +316,10 @@ Light:
     m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_Strength: 0.9
+    m_Bias: 0
+    m_NormalBias: 0
+    m_NearPlane: 0.1
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -676,7 +679,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53e8c76bbf120a541afa96ab96a8d4cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ForceToAdd: 10000
+  ForceToAdd: 20
   timeBetweenJumps: 10
 --- !u!65 &1042355207
 BoxCollider:

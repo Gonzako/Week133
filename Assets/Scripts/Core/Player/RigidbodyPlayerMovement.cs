@@ -8,7 +8,7 @@ using UnityEngine;
 public class RigidbodyPlayerMovement : MonoBehaviour, IPlayerMovement
 {
     public MovementValues MoveSettings;
-
+    public bool canAirControl = false;
     private PlayerEnviromentChecker checker;
     private IPlayerInput reader;
     private CapsuleCollider capCollider;
@@ -39,7 +39,7 @@ public class RigidbodyPlayerMovement : MonoBehaviour, IPlayerMovement
             Debug.Log("Moving on ground");
             GroundMove();
         }
-        else
+        else if(canAirControl)
         {
             Debug.Log("Air move");
             AirMove();
@@ -55,7 +55,7 @@ public class RigidbodyPlayerMovement : MonoBehaviour, IPlayerMovement
     }
 
     private void AirMove()
-    {
+    { 
         float accel;
         Vector3 wishDir = DesireDirection();
         float wishSpeed = MoveSettings.baseSpeed;
@@ -76,7 +76,8 @@ public class RigidbodyPlayerMovement : MonoBehaviour, IPlayerMovement
             if (wishSpeed > MoveSettings.sideStrafeSpeed) wishSpeed = MoveSettings.sideStrafeSpeed;
             accel = MoveSettings.sideStrafeAcceleration;
         }
-        Accelerate(wishDir, wishSpeed, accel);
+        Accelerate(wishDir, wishSpeed/2, accel/2);
+        
         
     }
 
@@ -150,17 +151,17 @@ public class RigidbodyPlayerMovement : MonoBehaviour, IPlayerMovement
         } 
         newspeed = speed - drop;
 
+        if (speed > 0)
+        {
+            forceToAdd.x += -rb.velocity.x* 1f/MoveSettings.friction;
+            forceToAdd.z += -rb.velocity.z* 1f/MoveSettings.friction;            
+        }
         if (newspeed < 0)
         {
             forceToAdd.x = -rb.velocity.x;
             forceToAdd.z = -rb.velocity.z;
         }
-        if (speed > 0)
-        {
-            forceToAdd.x = -rb.velocity.x* 1f/MoveSettings.friction;
-            forceToAdd.z = -rb.velocity.z* 1f/MoveSettings.friction;
-            
-        }
+      
 
     }
 

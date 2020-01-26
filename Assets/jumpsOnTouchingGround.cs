@@ -14,7 +14,6 @@ public class jumpsOnTouchingGround : MonoBehaviour
     Rigidbody rb;
     public float ForceToAdd = 50;
     public float timeOnGround = 3;
-    private float timerBetweenJumps = 0.1f;
     // Start is called before the first frame update
     void Start()
     {

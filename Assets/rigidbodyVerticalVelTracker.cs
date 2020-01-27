@@ -5,12 +5,13 @@ using UnityEngine;
 
 public class rigidbodyVerticalVelTracker : MonoBehaviour
 {
-    public float downThreshold = -1f, upThreshold = 0.5f;
+    public float downThreshold = -0.5f, upThreshold = 0.5f;
 
     public static event Action onVelocityChangeUp;
     public static event Action onVelocityChangeDown;
     public static event Action onJump;
     public static event Action onPeak;
+    public static event Action onLanding;
 
     bool checkForPeak;
     float previousYVel;
@@ -36,14 +37,21 @@ public class rigidbodyVerticalVelTracker : MonoBehaviour
         if(rb.velocity.y > upThreshold && previousYVel < upThreshold && !checkForPeak)
         {
             onVelocityChangeUp?.Invoke();
-        } else if(previousYVel > downThreshold && rb.velocity.y < downThreshold)
+        }
+        else if(previousYVel > downThreshold && rb.velocity.y < downThreshold)
         {
             onVelocityChangeDown?.Invoke();
-        } else if((previousYVel < downThreshold || previousYVel > upThreshold) 
+        }
+        else if((previousYVel < downThreshold || previousYVel > upThreshold) 
             && (rb.velocity.y < upThreshold && rb.velocity.y > downThreshold) && checkForPeak)
         {
             checkForPeak = false;
             onPeak?.Invoke();
+        }
+        else if((previousYVel < downThreshold)
+            && (rb.velocity.y > downThreshold))
+        {
+            onLanding?.Invoke();
         }
         previousYVel = rb.velocity.y;
     }

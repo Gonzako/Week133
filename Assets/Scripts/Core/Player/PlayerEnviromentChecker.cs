@@ -12,8 +12,8 @@ using UnityEngine;
 [RequireComponent(typeof(IPlayerMovement))]
 public class PlayerEnviromentChecker : MonoBehaviour
 {
-    public static event Action onPlayerLeaveGround;
-    public static event Action onPlayerTouchGround;
+    public static event Action<RaycastHit> onPlayerLeaveGround;
+    public static event Action<RaycastHit> onPlayerTouchGround;
 
     [Range(0, 2f)]
     public float radiusMultiplier;
@@ -45,10 +45,14 @@ public class PlayerEnviromentChecker : MonoBehaviour
         {
             if(previousHit.collider == null)
             {
-                onPlayerTouchGround?.Invoke();
+                onPlayerTouchGround?.Invoke(hit);
             }
             onSlope = true;
             return true;
+        }
+        if(previousHit.collider != null)
+        {
+            onPlayerLeaveGround?.Invoke(previousHit);
         }
         onSlope = false;
         return false;

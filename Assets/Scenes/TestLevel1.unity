@@ -595,6 +595,105 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &553573991
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 92560908155191813, guid: afce950ad822fd34fa984886861bec88,
+        type: 3}
+      propertyPath: m_Name
+      value: MainCamera
+      objectReference: {fileID: 0}
+    - target: {fileID: 92560908155191815, guid: afce950ad822fd34fa984886861bec88,
+        type: 3}
+      propertyPath: m_Follow
+      value: 
+      objectReference: {fileID: 1682275745674657118}
+    - target: {fileID: 92560908155191819, guid: afce950ad822fd34fa984886861bec88,
+        type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 92560908155191819, guid: afce950ad822fd34fa984886861bec88,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 92560908155191819, guid: afce950ad822fd34fa984886861bec88,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 92560908155191819, guid: afce950ad822fd34fa984886861bec88,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 92560908155191819, guid: afce950ad822fd34fa984886861bec88,
+        type: 3}
+      propertyPath: field of view
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 92560908155191820, guid: afce950ad822fd34fa984886861bec88,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 92560908155191820, guid: afce950ad822fd34fa984886861bec88,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 32.719
+      objectReference: {fileID: 0}
+    - target: {fileID: 92560908155191820, guid: afce950ad822fd34fa984886861bec88,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 92560908155191820, guid: afce950ad822fd34fa984886861bec88,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 92560908155191820, guid: afce950ad822fd34fa984886861bec88,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 92560908155191820, guid: afce950ad822fd34fa984886861bec88,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 92560908155191820, guid: afce950ad822fd34fa984886861bec88,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 92560908155191820, guid: afce950ad822fd34fa984886861bec88,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 92560908155191820, guid: afce950ad822fd34fa984886861bec88,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 92560908155191820, guid: afce950ad822fd34fa984886861bec88,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 92560908155191820, guid: afce950ad822fd34fa984886861bec88,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: afce950ad822fd34fa984886861bec88, type: 3}
 --- !u!1 &649479231
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,7 +706,7 @@ GameObject:
   - component: {fileID: 649479235}
   - component: {fileID: 649479234}
   - component: {fileID: 649479233}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -699,7 +798,7 @@ GameObject:
   - component: {fileID: 757223466}
   - component: {fileID: 757223465}
   - component: {fileID: 757223464}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -791,7 +890,7 @@ GameObject:
   - component: {fileID: 823551981}
   - component: {fileID: 823551980}
   - component: {fileID: 823551979}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1205,7 +1304,7 @@ GameObject:
   - component: {fileID: 1347753431}
   - component: {fileID: 1347753430}
   - component: {fileID: 1347753429}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1809,7 +1908,7 @@ GameObject:
   - component: {fileID: 2000113581}
   - component: {fileID: 2000113580}
   - component: {fileID: 2000113579}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1988,25 +2087,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DefaultPlayer
       objectReference: {fileID: 0}
-    - target: {fileID: 1682275745852081442, guid: 59ab6013ee636834f8f21a422770f937,
-        type: 3}
-      propertyPath: m_ClearFlags
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1682275745852081442, guid: 59ab6013ee636834f8f21a422770f937,
-        type: 3}
-      propertyPath: m_BackGroundColor.r
-      value: 0.09916505
-      objectReference: {fileID: 0}
-    - target: {fileID: 1682275745852081442, guid: 59ab6013ee636834f8f21a422770f937,
-        type: 3}
-      propertyPath: m_BackGroundColor.g
-      value: 0.040494844
-      objectReference: {fileID: 0}
-    - target: {fileID: 1682275745852081442, guid: 59ab6013ee636834f8f21a422770f937,
-        type: 3}
-      propertyPath: m_BackGroundColor.b
-      value: 0.13207549
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59ab6013ee636834f8f21a422770f937, type: 3}
+--- !u!4 &1682275745674657118 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 920861287, guid: 59ab6013ee636834f8f21a422770f937,
+    type: 3}
+  m_PrefabInstance: {fileID: 1682275745674657117}
+  m_PrefabAsset: {fileID: 0}

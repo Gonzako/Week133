@@ -15,7 +15,7 @@ MonoBehaviour:
   gravity: 20
   downGravityMultiplier: 1.94
   friction: 6
-  baseSpeed: 8
+  baseSpeed: 10
   runAcceleration: 14
   runDeacceleration: 10
   airAcceleration: 2

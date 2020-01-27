@@ -155,8 +155,8 @@ public class RigidbodyPlayerMovement : MonoBehaviour, IPlayerMovement
 
         if (speed > 0)
         {
-            forceToAdd.x += -rb.velocity.x* 1f/MoveSettings.friction;
-            forceToAdd.z += -rb.velocity.z* 1f/MoveSettings.friction;            
+            forceToAdd.x += -rb.velocity.x* 6f/MoveSettings.friction;
+            forceToAdd.z += -rb.velocity.z* 6f/MoveSettings.friction;            
         }
         if (newspeed < 0)
         {

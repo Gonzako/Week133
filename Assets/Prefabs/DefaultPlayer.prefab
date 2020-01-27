@@ -43,11 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e56983082a7ace649a4b5104f2762850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  invert: 0
-  mouseSensitivity: 8
-  cam: {fileID: 0}
-  jaw: 0
-  pitch: 0
 --- !u!1 &1682275745598844303
 GameObject:
   m_ObjectHideFlags: 0
@@ -116,7 +111,7 @@ MonoBehaviour:
   radiusMultiplier: 0.95
   layerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1792
   grOffset: 0.1
 --- !u!114 &1682275745598844298
 MonoBehaviour:

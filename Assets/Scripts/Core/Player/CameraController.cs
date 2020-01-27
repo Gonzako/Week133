@@ -19,7 +19,7 @@ public class CameraController : MonoBehaviour
         root = transform.parent;  
 
 
-        head = cam.transform;
+
         jaw = root.eulerAngles.y;
         pitch = cam.transform.eulerAngles.x;
     }

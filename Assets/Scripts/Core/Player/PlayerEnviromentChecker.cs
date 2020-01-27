@@ -11,6 +11,7 @@ using UnityEngine;
 [RequireComponent(typeof(IPlayerMovement))]
 public class PlayerEnviromentChecker : MonoBehaviour
 {
+
     [Range(0, 2f)]
     public float radiusMultiplier;
     private Transform playerPos;

@@ -5,15 +5,14 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public bool invert = false;
-    public float mouseSensitivity = 8f;
-    public GameObject cam;
-
-    private Transform root;
-    private Transform head;
-
-    public float jaw;
-    public float pitch;
+    private bool invert = false;
+    private float mouseSensitivity = 8f;
+    private GameObject cam;
+    private  Transform root;
+    private  Transform head;
+   
+    private float jaw;
+    private float pitch;
 
     void Start()
     {
@@ -45,6 +44,5 @@ public class CameraController : MonoBehaviour
         
 
         root.rotation = Quaternion.Euler(new Vector3(0f, jaw, 0f));
-        head.rotation = Quaternion.Euler(new Vector3(pitch, jaw, 0f));
     }
 }

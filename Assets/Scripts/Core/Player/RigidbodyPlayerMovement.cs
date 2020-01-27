@@ -7,7 +7,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody), typeof(CapsuleCollider), typeof(PlayerEnviromentChecker))]
 public class RigidbodyPlayerMovement : MonoBehaviour, IPlayerMovement
 {
-    public event Action onPlayerJump;
+    public static event Action onPlayerJump;
     public MovementValues MoveSettings;
     public bool canAirControl = false;
     private PlayerEnviromentChecker checker;

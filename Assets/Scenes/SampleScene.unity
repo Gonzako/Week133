@@ -169,8 +169,8 @@ MonoBehaviour:
   emissionIntensity: 1.1
   baseTile: {fileID: 1942317922939553768, guid: b5355c26f124f264b94fb496b0e08a5c,
     type: 3}
-  Rows: 10
-  Colums: 5
+  Rows: 7
+  Colums: 10
   colorsToLoopThrough:
   - {r: 0.5283019, g: 0, b: 0.09910145, a: 1}
   - {r: 0.9245283, g: 0.9038754, b: 0, a: 1}

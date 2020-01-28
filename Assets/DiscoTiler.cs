@@ -38,9 +38,9 @@ public class DiscoTiler : MonoBehaviour
 
         
 
-        oddCheck.x = rows % 2 == 1 ? 0f : 0.5f;
+        oddCheck.x = rows % 2 != 1 ? 0f : 0.5f;
         oddCheck.y = 0;
-        oddCheck.z = colums % 2 == 1 ? 0f : 0.5f;
+        oddCheck.z = colums % 2 != 1 ? 0f : 0.5f;
 
         int listIndex = 0;
 
@@ -51,9 +51,9 @@ public class DiscoTiler : MonoBehaviour
                 var newTile = pool.getNextObj();
                 newTile.transform.localScale = tileSize;
                 newTile.transform.localPosition = new Vector3(
-                ((i - rows/2 + 1) * tileSize.x + col.center.x),
+                ((i - rows/2 + 1 - oddCheck.x) * tileSize.x + col.center.x),
                 col.center.y,
-                ((j + 1f - colums/2) * tileSize.z + col.center.z));
+                ((j + 1f - colums/2 - oddCheck.z) * tileSize.z + col.center.z));
 
                 childrenMeshRenderers.Add(newTile.GetComponentInChildren<MeshRenderer>());
                 newTile.SetActive(true);

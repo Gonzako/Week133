@@ -168,8 +168,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseTile: {fileID: 1942317922939553768, guid: b5355c26f124f264b94fb496b0e08a5c,
     type: 3}
-  Rows: 30
-  Colums: 30
+  Rows: 71
+  Colums: 6
   colorsToLoopThrough:
   - {r: 0.37863874, g: 1, b: 0, a: 1}
   - {r: 0.9245283, g: 0.9038754, b: 0, a: 1}
@@ -185,8 +185,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 0.050585985, z: 1.7560658}
+  m_Center: {x: 0, y: 0.1674267, z: -0.37803292}
 --- !u!1 &237917096
 GameObject:
   m_ObjectHideFlags: 0

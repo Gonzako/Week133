@@ -5,7 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider))]
 public class DiscoTiler : MonoBehaviour
 {
-    private BoxCollider col;
+
+    public float emissionIntensity = 2;
     public GameObject baseTile;
     public int Rows = 2, Colums = 2;
     public List<Color> colorsToLoopThrough;
@@ -13,6 +14,10 @@ public class DiscoTiler : MonoBehaviour
     private List<MeshRenderer> childrenMeshRenderers = new List<MeshRenderer>();
     private GonzakoUtils.DataStructures.Pool<GameObject> pool;
 
+
+    private BoxCollider col;
+    private float timerBetweenColorSets;
+    private float timeBetweenColorSets = 0.2f;
     private Vector3 gridPos;
     private Vector3 oddCheck;
     private Vector3 tileSize;
@@ -42,8 +47,6 @@ public class DiscoTiler : MonoBehaviour
         oddCheck.y = 0;
         oddCheck.z = colums % 2 != 1 ? 0f : 0.5f;
 
-        int listIndex = 0;
-
         for (int i = 0; i < rows; i++)
         {
             for (int j = 0; j < colums; j++)
@@ -61,6 +64,15 @@ public class DiscoTiler : MonoBehaviour
         }
     }
 
+    private void hideAllTiles()
+    {
+        foreach(MeshRenderer n in childrenMeshRenderers)
+        {
+            pool.enPool(n.transform.parent.gameObject);
+            
+        }
+    }
+
     private void setRandomMaterialColor(MeshRenderer renderer)
     {
         MaterialPropertyBlock newMatPropBlock = new MaterialPropertyBlock();
@@ -70,15 +82,24 @@ public class DiscoTiler : MonoBehaviour
 
     private void setRandomColorOnlist(MeshRenderer renderer)
     {
+        Color normalCol = colorsToLoopThrough[Random.Range(0, colorsToLoopThrough.Count)];
         MaterialPropertyBlock newMatPropBlock = new MaterialPropertyBlock();
-        newMatPropBlock.SetColor("_Color", colorsToLoopThrough[Random.Range(0, colorsToLoopThrough.Count)]);
+        newMatPropBlock.SetColor("_Color", normalCol);
+        newMatPropBlock.SetColor("_EmissionColor", normalCol*emissionIntensity);
         renderer.SetPropertyBlock(newMatPropBlock);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (timerBetweenColorSets < Time.time)
+        {
+            foreach (MeshRenderer renderer in childrenMeshRenderers)
+            {
+                setRandomColorOnlist(renderer);
+            }
+            timerBetweenColorSets = Time.time + timeBetweenColorSets;
+        }
     }
 }
 

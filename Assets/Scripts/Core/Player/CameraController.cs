@@ -21,7 +21,6 @@ public class CameraController : MonoBehaviour
 
 
         jaw = root.eulerAngles.y;
-        pitch = cam.transform.eulerAngles.x;
     }
 
     void LateUpdate()

@@ -23,7 +23,7 @@ public class RigidbodyPlayerMovement : MonoBehaviour, IPlayerMovement
     private float desiredSpeed;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         reader = GetComponent<IPlayerInput>();
         checker = GetComponent<PlayerEnviromentChecker>();

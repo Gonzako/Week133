@@ -17,7 +17,7 @@ public class DiscoTiler : MonoBehaviour
 
     private BoxCollider col;
     private float timerBetweenColorSets;
-    private float timeBetweenColorSets = 0.2f;
+    private float timeBetweenColorSets = 0.8f;
     private Vector3 gridPos;
     private Vector3 oddCheck;
     private Vector3 tileSize;
